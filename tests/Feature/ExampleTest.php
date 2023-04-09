@@ -16,6 +16,13 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('Documentation');
+    }
+
+    public function test_the_homepage_symphony(): void
+    {
+        $response = $this->get('/');
+
+        $response->assertStatus(200);
         $response->assertSee('Symphony');
     }
 }
